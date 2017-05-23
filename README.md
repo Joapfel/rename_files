@@ -7,7 +7,9 @@ CALLING THE SCRIPT:
   FIRST ARGUMENT: filetype
   SECOND ARGUMENT: number (this number changes the filenames number)
   
+  
   POSSIBLE CALLS:
+  
   ./rename_files jpg 0
   This call turns files like somefile1.jpg, somefile2.jpg, ... into 1.jpg, 2.jpg
   
