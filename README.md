@@ -10,7 +10,7 @@ CALLING THE SCRIPT:
   
 POSSIBLE CALLS:
 - ./rename_files jpg 0
-  This call turns files like somefile1.jpg, somefile2.jpg, ... into 1.jpg, 2.jpg
+  - This call turns files like somefile1.jpg, somefile2.jpg, ... into 1.jpg, 2.jpg
   
 - ./rename_files jpg 1
   This call turns files like somefile1.jpg, somefile2.jpg, ... into 2.jpg, 3.jpg
