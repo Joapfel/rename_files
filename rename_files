@@ -1,0 +1,57 @@
+#!/bin/bash
+
+#the script needs two arguments given otherwise it wont run
+if [ "$#" == 2 ]; then
+  #ending of the files that should be manipulated
+  #FIRST ARGUMENT OF THE SCRIPT
+  end="$1"
+  #number which modifies the index of all files
+  #SECOND ARGUMENT OF THE SCRIPT
+  i="$2"
+else
+  echo "-----------------------------------------------------"
+  echo "ATTENTION: "
+  echo "filetype and increase/decrease number need to be "
+  echo "specified!"
+  echo ""
+  echo "FIRST ARGUMENT: filetype (txt, jpg...)"
+  echo ""
+  echo "SECOND ARGUMENT: number (0,1,2,3...)"
+  echo "the number specifies to which extend the name of the"
+  echo "file is changed in terms of its numbering"
+  echo "-----------------------------------------------------"
+  exit 1
+fi
+
+#change the filename by appending tmp at the beginning
+#this resolves renaming issue if the targetname already exists
+#EXAMPLE:
+#The following files are given: 1.txt, 2.txt, 3.txt
+#They should be increased by 1 so that the result is: 2.txt, 3.txt, 4.txt
+#When increasing 1.txt by 1 ---> 2.txt already exists
+#Therefore change the filename from the beginning
+for f in *.$end
+do
+  mv $f tmp$f
+done
+
+#manipulate all files of the given type
+for file in *.$end
+do
+  #get the filenumber out of messy files
+  #EXAMPLE: somename33.txt ---> we want to get the 33
+  #we need this even if the original filename is only a number
+  #because of the previously changed filename
+  NUMBER=$(echo $file | grep -o -E '[0-9]+')
+  #the original number changed by the second arg number 
+  NEW_N=$((NUMBER + i))
+  #show how the filename changed
+  echo "${file/tmp/""}" ---\> "$NEW_N".$end
+
+  #double check that files are only renamed if the target name
+  #does not exist already
+  if [ ! -f "$NEW_N".$end ]; then
+     mv "$file" "${file/*.$end/$NEW_N.$end}"
+  fi
+done
+
