@@ -8,15 +8,14 @@ CALLING THE SCRIPT:
   SECOND ARGUMENT: number (this number changes the filenames number)
   
   
-  POSSIBLE CALLS:
-  
-  ./rename_files jpg 0
+POSSIBLE CALLS:
+- ./rename_files jpg 0
   This call turns files like somefile1.jpg, somefile2.jpg, ... into 1.jpg, 2.jpg
   
-  ./rename_files jpg 1
+- ./rename_files jpg 1
   This call turns files like somefile1.jpg, somefile2.jpg, ... into 2.jpg, 3.jpg
   
-  ./rename_files jpg -1
+- ./rename_files jpg -1
   This call turns files like somefile2.jpg, somefile3.jpg, ... into 1.jpg, 2.jpg
   If using subtraction one has to make sure no file will end up in a negative number! This case is not handled by the script     yet and can result in unexpected results or file loss.
   
