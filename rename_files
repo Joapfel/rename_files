@@ -47,24 +47,3 @@ do
 
   fi
 done
-
-#manipulate all files of the given type
-#for file in *.$end
-#do
-  #get the filenumber out of messy files
-  #EXAMPLE: somename33.txt ---> we want to get the 33
-  #we need this even if the original filename is only a number
-  #because of the previously changed filename
-#  NUMBER=$(echo $file | grep -o -E '[0-9]+')
-  #the original number changed by the second arg number 
-#  NEW_N=$((NUMBER + i))
-  #show how the filename changed
-#  echo "${file/tmp/""}" ---\> "$NEW_N".$end
-
-  #double check that files are only renamed if the target name
-  #does not exist already
-#  if [ ! -f "$NEW_N".$end ]; then
-#     mv "$file" "${file/*.$end/$NEW_N.$end}"
-#  fi
-#done
-
