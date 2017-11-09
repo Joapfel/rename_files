@@ -17,7 +17,6 @@ the script takes multiple arguments
 ## EXAMPLE:
 
 1.
-</br>
 file call: ./rename_files wav _0 _1
 </br>
 before: ctd_de_DE_000_WEL001_20171103_001.wav
@@ -26,7 +25,6 @@ after:  ctd_de_DE_100_WEL001_20171103_001.wav
 
 
 2.
-</br>
 file call: ./rename_files wav _0 _1 all
 </br>
 before: ctd_de_DE_000_WEL001_20171103_001.wav
